@@ -1,0 +1,229 @@
+<div>
+  <div *ngIf="errmsg" class="alert alert-danger">{{errmsg}}</div>
+<form [formGroup]="ProfessionalForm" class="form-inline profform" aria-label="professionalform">
+    <div class="jumbotron" tabindex="-1">
+        <div class="container">
+          <div class="row">
+            <h2 class="porfsheader" tabindex="-1">Enroll As Professional</h2>
+          </div>
+          <div class="row" *ngIf="formsubmitted">
+            <h4 style="color:red" tabindex="-1">Registration done succesfully!!</h4>
+          </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="d-flex ">
+        <label class="pure-material-textfield-outlined mt-5 me-5 ml-5" tabindex="-1">First Name</label>
+        <div class="row">
+          <div class="col-md-12">
+        <input type="text" 
+               class="form-control w-20 mt-5 me-1" required  tabindex="-1" formControlName="firstname">
+         </div>
+         <div class="col-md-12" tabindex="-1">
+               <div *ngIf="ProfessionalForm.controls['firstname'].invalid && (ProfessionalForm.controls['firstname'].dirty || ProfessionalForm.controls['firstname'].touched)" class="alert alert-danger errormsg">
+                
+                <div  *ngIf="ProfessionalForm.controls['firstname']?.errors?.['required']">
+                  Firstname is required.
+                </div>
+            </div>
+          </div>
+          </div>
+       </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="form-group" tabindex="-1">
+        <div class="d-flex ">
+        <label class="pure-material-textfield-outlined  me-5 ml-5" tabindex="-1">Last Name</label>
+        <div class="row">
+          <div class="col-md-12">
+        <input type="text"
+               class="form-control w-20  me-1" tabindex="-1" formControlName="lastname" aria-label="lastname">
+              </div>
+              <div class="col-md-12">
+                <div *ngIf="ProfessionalForm.controls['lastname'].invalid && (ProfessionalForm.controls['lastname'].dirty || ProfessionalForm.controls['lastname'].touched)" class="alert alert-danger errormsg">
+                
+                <div *ngIf="ProfessionalForm.controls['lastname']?.errors?.['required']">
+                  lastname is required.
+                </div>
+            </div>
+          </div>
+              </div>
+               </div>
+      </div>
+      </div>
+    
+      <div class="row">
+    <div class="form-group" tabindex="-1" aria-label="email">
+      <div class="d-flex ">
+      <label class="pure-material-textfield-outlined  margin-r5 mt-3 ml-5">Email</label>
+      <div class="row">
+        <div class="col-md-12">
+      <input type="email"
+             class="form-control w-20 mt-3 me-1" formControlName="email">
+            </div>
+            <div class="col-md-12">
+              <div *ngIf="ProfessionalForm.controls['email'].invalid && (ProfessionalForm.controls['email'].dirty || ProfessionalForm.controls['email'].touched)" class="alert alert-danger errormsg">
+                
+                
+                <div *ngIf="ProfessionalForm.controls['email']?.errors?.['pattern']">
+                  Email should be valid.
+                </div>
+                <div *ngIf="ProfessionalForm.controls['email']?.errors?.['required']">
+                  Email is required.
+                </div>
+            </div>
+
+            </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group" aria-label="mobnum">
+      <div class="d-flex ">
+      <label class="pure-material-textfield-outlined  me-3 mt-3 ml-5">Mobile Number</label>
+      <div class="row">
+        <div class="col-md-12">
+      <input type="text"
+             class="form-control w-20 mt-3 me-1" formControlName="mobileNumber">
+            </div>
+            <div class="col-md-12">
+              <div *ngIf="ProfessionalForm.controls['mobileNumber'].invalid && (ProfessionalForm.controls['mobileNumber'].dirty || ProfessionalForm.controls['mobileNumber'].touched)" class="alert alert-danger errormsg">
+                
+                
+                <div *ngIf="ProfessionalForm.controls['mobileNumber']?.errors?.['required']">
+                  Mobile Number is Required
+                </div>
+                <div *ngIf="ProfessionalForm.controls['mobileNumber']?.errors?.['pattern'] || ProfessionalForm.controls['mobileNumber']?.errors?.['minLength'] || ProfessionalForm.controls['mobileNumber']?.errors?.['maxLength']">
+                 Please Enter Valid Mobile number
+                </div>
+                </div>
+            </div>
+            </div>
+            
+            </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <div class="d-flex ">
+      <label class="pure-material-textfield-outlined   margin-r5 mt-3 ml-5" aria-label="address">Address </label>
+      <div class="row">
+        <div class="col-md-12">
+      <textarea type="area"
+             class="form-control w-20 mt-3 me-1" formControlName="adress">
+             </textarea>
+            </div>
+            <div class="col-md-12">
+              <div *ngIf="ProfessionalForm.controls['adress'].invalid && (ProfessionalForm.controls['adress'].dirty || ProfessionalForm.controls['adress'].touched)" class="alert alert-danger errormsg">
+                
+                
+                <div *ngIf="ProfessionalForm.controls['adress']?.errors?.['required']">
+                  Adress is Required
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+    </div>
+  </div>
+
+  <div class="row">
+    
+    </div>
+    <div class="row">
+  
+      <div class="form-group">
+        <div class="d-flex ">
+        <label class="pure-material-textfield-outlined   margin-r5 mt-3 ml-5" aria-label="Service">Service</label>
+        <div class="row">
+          <div class="col-md-12">
+        <select class="form-control w-20 mt-3 me-1" formControlName="service">
+          <option value="">Please select Services</option>
+          <option *ngFor="let service of Services"
+                  [value]="service">
+                  {{service}}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <div *ngIf="ProfessionalForm.controls['service'].invalid && (ProfessionalForm.controls['service'].dirty || ProfessionalForm.controls['service'].touched)" class="alert alert-danger errormsg">
+                
+                
+          <div *ngIf="ProfessionalForm.controls['service']?.errors?.['required']">
+            Please select Service
+          </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    <div class="row">
+  
+    <div class="form-group">
+      <div class="d-flex ">
+      <label class="pure-material-textfield-outlined   me-5 mt-3 ml-5" aria-label="available timing">Available timing</label>
+      <div class="row">
+        <div class="col-md-12">
+      <select class="form-control w-20 mt-3 me-1" formControlName="availbleTimming">
+        <option value="">Please select timings</option>
+        <option *ngFor="let slot of slots"
+                [value]="slot">
+                {{slot}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-12">
+      <div *ngIf="ProfessionalForm.controls['availbleTimming'].invalid && (ProfessionalForm.controls['availbleTimming'].dirty || ProfessionalForm.controls['availbleTimming'].touched)" class="alert alert-danger errormsg">
+                
+                
+        <div *ngIf="ProfessionalForm.controls['availbleTimming']?.errors?.['required']">
+          Please select Availble Service
+        </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="d-flex ">
+        <label class="pure-material-textfield-outlined   me-5 mt-3 ml-5" aria-label="company name">Company name</label>
+        <input type="text"
+               class="form-control w-20 mt-3 me-1" formControlName="companyName">
+               </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="form-group">
+      <div class="d-flex ">
+      <p class="searchtextbox">    
+        
+        <button type="button" tabindex="-1" aria-label="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#myModal" (click)="onSubmit()">Register</button>
+        
+      
+      </p>  
+      <p class="searchtextbox ml-button"> 
+      <button type="button" tabindex="-1" class="btn btn-primary" aria-label="button" [routerLink]="['servicehome']" data-toggle="modal" data-target="#myModal">cancel</button> 
+      </p>
+    </div>
+    </div>     
+    </div>
+  </form>
+  
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
+

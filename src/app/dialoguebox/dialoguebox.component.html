@@ -1,0 +1,81 @@
+
+<mat-dialog-content class="width-30rem">
+    <button class="close" mat-button id="closeicon" (click)="onConfirmClick()">X</button>
+    <div class="container text-center" *ngIf="iscontentpage">
+        <div class="row">
+            <div class="col">
+            <h4>  Booking Details</h4>
+              </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col">
+            Arrival time
+          </div>
+          <div class="col">
+            {{element.arrivaltime}}
+          </div>          
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+             Date of Booking
+            </div>
+            <div class="col">
+              {{element.dateofbooking}}
+            </div>    
+        </div> 
+        <hr>    
+        <div class="row">
+            <div class="col">
+             Selected day
+            </div>
+            <div class="col">
+              {{element.dateofservice}}
+            </div>    
+        </div>    
+        <hr>
+        <div class="row">
+            <div class="col">
+                Price
+            </div>
+            <div class="col">
+              {{element.price}}
+            </div>    
+        </div>    
+        <hr>
+        <div class="row">
+            <div class="col">
+                Service Selected 
+            </div>
+            <div class="col">
+              {{element.servicename}}
+            </div>    
+        </div>   
+        <hr>
+        <div class="row">
+            <div class="col">
+                Service Type
+            </div>
+            <div class="col">
+              {{element.servicetypedesc}}
+            </div>    
+        </div>  
+        <hr>
+        <div class="row">
+            <div class="col">
+                Booking Status
+            </div>
+            <div class="col">
+              {{element.paymentStatus}}
+            </div>    
+        </div>  
+      </div>
+      <div *ngIf="!iscontentpage">
+        {{message}}
+      </div>
+</mat-dialog-content>
+<mat-dialog-actions align="center" >
+<button mat-raised-button class="btn btn-primary ml-4 pl-3"  tabindex="1" *ngIf="!iscontentpage" (click)="navigateToHome()">{{cancelButtonText}}</button>
+<button mat-raised-button class="btn btn-primary ml-4 pl-3" mat-dialog-close tabindex="-1" (click)="onConfirmClick()" *ngIf="iscontentpage">{{cancelButtonText}}</button>
+</mat-dialog-actions>

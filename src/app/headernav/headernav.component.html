@@ -1,0 +1,56 @@
+<!-- <html lang="en" class="full-height header-bg h-50">
+
+
+<header >
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo navelement ">
+    <a class="navbar-brand linkitems" [routerLink]="['servicehome']"><strong>Home</strong></a>
+    <a class="navbar-brand linkitems " [routerLink]="['showappointments']"><strong>My Booking</strong></a>
+    <a class="navbar-brand linkitems " [routerLink]="['enrolllasprof']"><strong>Enroll As Professional</strong></a>
+
+  </nav> 
+
+</header>
+</html> -->
+
+<header style="height:4rem">
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand text-light" aria-label="home" [routerLink]="['servicehome']">Home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+        aria-label="button"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-light" [routerLink]="['showappointments']" tabindex="-1" aria-label="my booking">My Booking</a>
+          </li>
+          <li class="nav-item" aria-label="enrollprof" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-light" [routerLink]="['/enrolllasprof']"
+              >Enroll As Professional</a
+            >
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

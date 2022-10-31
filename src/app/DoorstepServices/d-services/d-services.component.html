@@ -1,0 +1,74 @@
+<div class="row">
+  <h2 class="dheader">Home Page</h2>
+  
+</div>
+<form  tabindex="-1" aria-label="Services" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-inline well border-1px"> 
+  
+  <div class="d-flex dflex">
+  
+  <div class="form-group " aria-label="select city">
+    <p class="searchtextbox">
+      <label for="city">city </label>&nbsp;
+     
+
+      <select id="city" name="city" formControlName="city"  (ngModelChange)="onSubmit()">
+        <option value="">Select City</option>
+        <option value="{{city.citycode}}" *ngFor="let city of availblecities">{{city.cityname}}</option>
+        
+      </select>
+    </p> 
+  
+  </div>
+  <div class="form-group " tabindex="-1" aria-label="search service" >
+    <p class="searchtextbox">     
+      <input type="text" id="firstname" name="service" formControlName="service" (ngModelChange)="onSubmit()" placeholder="Search for Service">
+    </p>   
+  </div>  
+</div>
+   
+  </form>
+
+  <form [formGroup]="detailsearchform" (ngSubmit)="onSubmitsearch()" class="form-inline well border-1px" *ngIf="detailsearch"> 
+    <div class="d-flex dflex">
+    <div class="form-group" aria-label="select service">
+      <p class="searchtextbox" tabindex="-1">
+        <label for="city">Select Service </label>&nbsp;
+       
+        <select id="Service" name="service" formControlName="service"  [(ngModel)] = "selectedUser">
+          <option value="">Select Service</option>
+          <option value="{{service.servicecode}}" *ngFor="let service of availbleservicelist">{{service.servicename}}</option>
+         
+        </select>
+      </p> 
+    </div>
+      <div class="form-group">
+        <p class="searchtextbox">     
+          <button  tabindex="-1" aria-label="search services" type="button" class="btn btn-primary" (click)="onSubmitsearch()">Search</button>
+        </p>   
+      </div>     
+    </div>     
+       
+      </form>
+
+  <table class="table dtable" aria-label="service name">
+    <thead class="thead-dark searchheader">
+      <tr>
+        <th scope="col">Service Name</th>
+        <th scope="col">Price(Rs.)</th>
+        <th scope="col">Time Taken</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of Availbleservice" tabindex="-1">
+        <td>{{service.servicename}}</td>
+        <td>{{service.price}}</td>
+        <td>{{service.timetaken}}</td>
+        <td><button type="button" (click)="Bookservice(service)" class="btn btn-primary">Select</button></td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  

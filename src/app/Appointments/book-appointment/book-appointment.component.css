@@ -1,0 +1,48 @@
+.alcenter{
+    text-align: center;
+}
+.dheader{
+
+  margin-right: 25rem;
+  margin-left: 37rem;
+  width: 13rem;
+  border: 1px solid black;
+ background-color: rgb(85, 82, 246);
+}
+.input-radio{
+    display: inline-block;
+    margin-right: 10px;
+    
+  }
+  input[type=radio] {
+      display: none;
+    }
+    input[type=radio] + label {
+      padding: 10px;
+      
+      border: 1px solid black;
+   
+    }
+   input[type=radio] + label:hover {
+      border: 1px solid red;
+    }
+    input[type=radio]:checked + label {
+      border: 1px solid red;
+      background-color: blue;
+    }
+    .bheader{
+
+      text-align: center;
+    border: 1px solid;
+    margin-left: 17rem;
+    background-color:rgb(85, 82, 246);
+    }
+    .sheader{
+      margin-top: -16px;
+    margin-left: -16px;
+    margin-right: -17px;
+    margin-bottom: -16px;
+    background-color: greenyellow;
+    height:3rem;
+    border-bottom: 1px solid black;
+    }

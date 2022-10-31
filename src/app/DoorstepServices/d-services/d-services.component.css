@@ -1,0 +1,55 @@
+.searchtextbox{
+
+    margin-left:13rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+#wrapper {
+    width: 500px;
+    border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+}
+#first {
+    width: 300px;
+    float:left; /* add this */
+    border: 1px solid red;
+}
+#second {
+    border: 1px solid green;
+    float: left; /* add this */
+}
+.border-1px{
+    border:2px solid black;
+    margin:5rem;
+}
+.w-54rem{
+    width:80rem;
+}
+.dtable{
+    border: 1px solid black;
+    margin-top:1rem;
+    margin-left:5rem;
+    margin-right:7rem;
+    width: 68rem;
+}
+.searchboxm{
+
+    margin-left: -11rem;
+}
+.dheader{
+
+    margin-right: 25rem;
+    margin-left: 37rem;
+    width: 13rem;
+    border: 1px solid black;
+   background-color: rgb(85, 82, 246);
+}
+.dflex{
+    margin-left:7rem;
+}
+.ddropdown{
+    margin-left:-10rem;
+}
+.searchheader{
+    background-color: #0a6b8b
+}
