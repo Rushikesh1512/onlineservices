@@ -8,7 +8,7 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 })
 export class ShowmodalComponent implements OnInit {
 
-  //modalRef: MdbModalRef<ShowmodalComponent> | null = null;
+ 
 
   constructor(public modalRef: MdbModalRef<ShowmodalComponent>) { }
   @Input() show: boolean=false;

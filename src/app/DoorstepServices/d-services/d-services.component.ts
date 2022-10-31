@@ -81,7 +81,5 @@ export class DServicesComponent implements OnInit {
   this.router.navigateByUrl('bookappoint');
 
   }
-  // ngOndestroy() {
-  //   this.elementRef.nativeElement.remove();
-  // }
+ 
 }
